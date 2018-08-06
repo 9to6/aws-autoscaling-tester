@@ -1,1 +1,2 @@
-# cloudwatch-metrics-tester
+# AWS metrics generator
+
