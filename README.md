@@ -1,2 +1,2 @@
-# AWS metrics generator
+# AWS Cloudwatch metrics generator
 
