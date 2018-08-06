@@ -1,20 +1,20 @@
 package server
 
 import (
-	"github.com/9to6/cloudwatch-metrics-tester/pkg/log"
 	"github.com/9to6/gin-logrus"
-	llog "github.com/sirupsen/logrus"
+	"github.com/aws/aws-sdk-go/service/cloudwatch"
 	"github.com/gin-contrib/location"
 	"github.com/gin-gonic/gin"
-	"github.com/aws/aws-sdk-go/service/cloudwatch"
+	llog "github.com/sirupsen/logrus"
+	"metric-generator/pkg/log"
 
-	"github.com/aws/aws-sdk-go/aws/session"
-	"github.com/aws/aws-sdk-go/aws"
-	"os"
 	"fmt"
-	"github.com/9to6/cloudwatch-metrics-tester/pkg/server/handler"
+	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
-	"github.com/9to6/cloudwatch-metrics-tester/pkg/server/timer"
+	"github.com/aws/aws-sdk-go/aws/session"
+	"metric-generator/pkg/server/handler"
+	"metric-generator/pkg/server/timer"
+	"os"
 )
 
 type Server struct {

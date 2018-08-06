@@ -2,9 +2,8 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"github.com/9to6/cloudwatch-metrics-tester/pkg/server"
+	"metric-generator/pkg/server"
 )
-
 
 func NewCmdServer() *cobra.Command {
 	cmd := &cobra.Command{
@@ -17,11 +16,11 @@ func NewCmdServer() *cobra.Command {
 }
 
 func runServer(cmd *cobra.Command, args []string) error {
-	server, err := server.NewServer()
+	s, err := server.NewServer()
 	if err != nil {
 		return err
 	}
-	if err := server.Run(); err != nil {
+	if err := s.Run(); err != nil {
 		return err
 	}
 	return nil

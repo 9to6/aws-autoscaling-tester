@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/9to6/cloudwatch-metrics-tester/cmd"
+	"metric-generator/cmd"
 
 	"github.com/spf13/cobra"
 )

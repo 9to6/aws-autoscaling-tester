@@ -1,14 +1,14 @@
 package timer
 
 import (
+	"github.com/aws/aws-sdk-go/service/cloudwatch"
 	"golang.org/x/net/context"
+	"metric-generator/pkg/log"
+	"metric-generator/pkg/server/conn"
 	"os"
 	"os/signal"
 	"syscall"
 	"time"
-		"github.com/aws/aws-sdk-go/service/cloudwatch"
-	"github.com/9to6/cloudwatch-metrics-tester/pkg/server/conn"
-	"github.com/9to6/cloudwatch-metrics-tester/pkg/log"
 )
 
 var ticker *time.Ticker
