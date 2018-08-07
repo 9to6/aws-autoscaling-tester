@@ -20,8 +20,12 @@ func StartTimer(cloudWatch *cloudwatch.CloudWatch) {
 	ticker := time.NewTicker(60 * time.Second)
 	go func() {
 		for t := range ticker.C {
-			log.Logger.Info("Ticker executed", t)
-			conn.SendConnectionMetric(cloudWatch)
+			log.Logger.Info("Ticker executed: ", t)
+			if err := conn.SendConnectionMetric(cloudWatch); err != nil {
+				log.Logger.Error("error: ", err)
+			} else {
+				log.Logger.Info("To send connection metrics is done ")
+			}
 		}
 	}()
 

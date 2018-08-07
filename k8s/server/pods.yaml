@@ -1,0 +1,38 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: metric-generator-deployment
+spec:
+  replicas: 5
+  template:
+    metadata:
+      labels:
+        app: metric-generator-server
+    spec:
+      containers:
+        - name: metric-generator
+          imagePullPolicy: Always
+          image: 9to5/metric-generator:0.1.1
+          args:
+            - "server"
+          ports:
+            - containerPort: 8080
+          envFrom:
+            - configMapRef:
+                name: aws-env
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: metric-generator-service
+  annotations:
+      service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
+      external-dns.alpha.kubernetes.io/hostname: mg.external-dns.enswer.be.
+spec:
+  selector: 
+    app: metric-generator-server
+  type: LoadBalancer
+  ports:
+    - port: 8080
+      name: service-port
+      targetPort: 8080

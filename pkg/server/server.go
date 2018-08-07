@@ -47,8 +47,6 @@ func NewServer() (*Server, error) {
 	server := &Server{
 		logger: log.Logger,
 	}
-	server.logger.Info("aaaaaaa")
-
 	router := gin.New()
 	router.Use(location.Default())
 	router.Use(ginlogrus.Logger(log.Logger))

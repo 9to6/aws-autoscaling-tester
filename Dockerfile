@@ -6,9 +6,15 @@ RUN apk add --update git make
 
 ADD . /go/src/metric-generator
 RUN cd /go/src/metric-generator && make install
-RUN pwd
 WORKDIR /go/bin
-RUN ls
+
+RUN apk add --update \
+    python \
+    python-dev \
+    py-pip \
+    build-base \
+  && pip install awscli \
+  && rm -rf /var/cache/apk/*
 
 EXPOSE 8080
 ENTRYPOINT ["metric-generator"]
