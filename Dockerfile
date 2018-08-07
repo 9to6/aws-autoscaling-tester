@@ -8,13 +8,13 @@ ADD . /go/src/metric-generator
 RUN cd /go/src/metric-generator && make install
 WORKDIR /go/bin
 
-RUN apk add --update \
-    python \
-    python-dev \
-    py-pip \
-    build-base \
-  && pip install awscli \
-  && rm -rf /var/cache/apk/*
+# RUN apk add --update \
+#     python \
+#     python-dev \
+#     py-pip \
+#     build-base
+# RUN pip install awscli \
+#   && rm -rf /var/cache/apk/*
 
 EXPOSE 8080
 ENTRYPOINT ["metric-generator"]

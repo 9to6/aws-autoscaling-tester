@@ -12,7 +12,7 @@ spec:
       containers:
         - name: metric-generator
           imagePullPolicy: Always
-          image: 9to5/metric-generator:0.1.1
+          image: dreg.be/tkwon/metric-generator:0.1.2
           args:
             - "server"
           ports:
@@ -20,6 +20,8 @@ spec:
           envFrom:
             - configMapRef:
                 name: aws-env
+      imagePullSecrets:
+        - name: regcred
 ---
 apiVersion: v1
 kind: Service

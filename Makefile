@@ -50,7 +50,7 @@ clean:
 	@rm -rf release
 
 docker-build:
-	@docker build -t 9to5/${SRC}:`cat VERSION` .
+	@docker build -t dreg.be/tkwon/${SRC}:`cat VERSION` .
 
 docker-push:
-	@docker push 9to5/${SRC}:`cat VERSION`
+	@docker push dreg.be/tkwon/${SRC}:`cat VERSION`
