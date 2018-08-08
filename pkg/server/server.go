@@ -78,5 +78,6 @@ func NewServer() (*Server, error) {
 
 	router.GET("/status", func(c *gin.Context) { c.Writer.Write([]byte(`success`)) })
 	router.GET("/connection", handler.GetConnectionHandler)
+	router.POST("/connection", handler.PostConnectionHandler)
 	return server, nil
 }
