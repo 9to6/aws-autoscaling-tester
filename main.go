@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"metric-generator/cmd"
+	"aws-autoscaling-tester/cmd"
 
 	"github.com/spf13/cobra"
 )

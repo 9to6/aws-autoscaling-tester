@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"metric-generator/pkg/server"
+	"aws-autoscaling-tester/pkg/server"
 )
 
 func NewCmdServer() *cobra.Command {

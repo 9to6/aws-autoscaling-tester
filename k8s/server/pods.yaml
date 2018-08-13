@@ -1,18 +1,18 @@
 apiVersion: extensions/v1beta1
 kind: Deployment
 metadata:
-  name: metric-generator-deployment
+  name: aws-autoscaling-tester-deployment
 spec:
   replicas: 5
   template:
     metadata:
       labels:
-        app: metric-generator-server
+        app: aws-autoscaling-tester-server
     spec:
       containers:
-        - name: metric-generator
+        - name: aws-autoscaling-tester
           imagePullPolicy: Always
-          image: dreg.be/tkwon/metric-generator:0.1.2
+          image: dreg.be/tkwon/aws-autoscaling-tester:0.1.2
           args:
             - "server"
           ports:
@@ -26,13 +26,13 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: metric-generator-service
+  name: aws-autoscaling-tester-service
   annotations:
       service.beta.kubernetes.io/aws-load-balancer-internal: 0.0.0.0/0
       external-dns.alpha.kubernetes.io/hostname: mg.external-dns.enswer.be.
 spec:
   selector: 
-    app: metric-generator-server
+    app: aws-autoscaling-tester-server
   type: LoadBalancer
   ports:
     - port: 8080

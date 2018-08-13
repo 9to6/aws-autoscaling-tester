@@ -1,11 +1,11 @@
 package handler
 
 import (
+	"aws-autoscaling-tester/pkg/client/iface"
+	"aws-autoscaling-tester/pkg/client/worker"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	llog "github.com/sirupsen/logrus"
-	"metric-generator/pkg/client/iface"
-	"metric-generator/pkg/client/worker"
 	"strconv"
 )
 

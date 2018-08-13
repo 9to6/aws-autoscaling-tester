@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"metric-generator/pkg/client"
-	"metric-generator/pkg/client/config"
+	"aws-autoscaling-tester/pkg/client"
+	"aws-autoscaling-tester/pkg/client/config"
 )
 
 var conf config.Config
