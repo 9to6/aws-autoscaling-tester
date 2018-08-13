@@ -1,2 +1,3 @@
 .idea
 metric-generator
+k8s/server/configmap.yaml

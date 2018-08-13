@@ -38,6 +38,7 @@ func middlewarePredispatch(s *Server) gin.HandlerFunc {
 		ctx.Next()
 	}
 }
+
 func (s *Server) Run() error {
 	timer.StartTimer(s.cloudWatch)
 	return s.router.Run(":8080")
