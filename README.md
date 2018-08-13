@@ -1,2 +1,2 @@
-# AWS Cloudwatch metrics generator
+# AWS autoscaling tester
 
