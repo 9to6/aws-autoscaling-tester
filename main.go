@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"aws-autoscaling-tester/cmd"
+	"github.com/9to6/aws-autoscaling-tester/cmd"
 
 	"github.com/spf13/cobra"
 )

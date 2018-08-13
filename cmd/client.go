@@ -2,8 +2,8 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"aws-autoscaling-tester/pkg/client"
-	"aws-autoscaling-tester/pkg/client/config"
+	"github.com/9to6/aws-autoscaling-tester/pkg/client"
+	"github.com/9to6/aws-autoscaling-tester/pkg/client/config"
 )
 
 var conf config.Config

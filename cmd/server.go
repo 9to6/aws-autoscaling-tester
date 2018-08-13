@@ -2,7 +2,7 @@ package cmd
 
 import (
 	"github.com/spf13/cobra"
-	"aws-autoscaling-tester/pkg/server"
+	"github.com/9to6/aws-autoscaling-tester/pkg/server"
 )
 
 func NewCmdServer() *cobra.Command {

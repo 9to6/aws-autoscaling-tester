@@ -6,14 +6,14 @@ import (
 	"github.com/gin-contrib/location"
 	"github.com/gin-gonic/gin"
 	llog "github.com/sirupsen/logrus"
-	"aws-autoscaling-tester/pkg/log"
+	"github.com/9to6/aws-autoscaling-tester/pkg/log"
 
 	"fmt"
 	"github.com/aws/aws-sdk-go/aws"
 	"github.com/aws/aws-sdk-go/aws/credentials"
 	"github.com/aws/aws-sdk-go/aws/session"
-	"aws-autoscaling-tester/pkg/server/handler"
-	"aws-autoscaling-tester/pkg/server/timer"
+	"github.com/9to6/aws-autoscaling-tester/pkg/server/handler"
+	"github.com/9to6/aws-autoscaling-tester/pkg/server/timer"
 	"os"
 )
 

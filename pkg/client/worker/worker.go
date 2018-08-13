@@ -2,7 +2,7 @@ package worker
 
 import (
 	"io/ioutil"
-	"aws-autoscaling-tester/pkg/log"
+	"github.com/9to6/aws-autoscaling-tester/pkg/log"
 	"net/http"
 	"net/url"
 	"strconv"

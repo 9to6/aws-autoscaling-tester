@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"github.com/gin-gonic/gin"
 	llog "github.com/sirupsen/logrus"
-	"aws-autoscaling-tester/pkg/server/conn"
+	"github.com/9to6/aws-autoscaling-tester/pkg/server/conn"
 	"strconv"
 )
 

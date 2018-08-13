@@ -5,10 +5,10 @@ import (
 	"github.com/gin-contrib/location"
 	"github.com/gin-gonic/gin"
 	llog "github.com/sirupsen/logrus"
-	"aws-autoscaling-tester/pkg/client/config"
-	"aws-autoscaling-tester/pkg/client/handler"
-	"aws-autoscaling-tester/pkg/client/worker"
-	"aws-autoscaling-tester/pkg/log"
+	"github.com/9to6/aws-autoscaling-tester/pkg/client/config"
+	"github.com/9to6/aws-autoscaling-tester/pkg/client/handler"
+	"github.com/9to6/aws-autoscaling-tester/pkg/client/worker"
+	"github.com/9to6/aws-autoscaling-tester/pkg/log"
 )
 
 type Client struct {

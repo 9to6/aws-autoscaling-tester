@@ -2,7 +2,7 @@ package iface
 
 import (
 	llog "github.com/sirupsen/logrus"
-	"aws-autoscaling-tester/pkg/client/worker"
+	"github.com/9to6/aws-autoscaling-tester/pkg/client/worker"
 )
 
 type Client interface {

@@ -3,8 +3,8 @@ package timer
 import (
 	"github.com/aws/aws-sdk-go/service/cloudwatch"
 	"golang.org/x/net/context"
-	"aws-autoscaling-tester/pkg/log"
-	"aws-autoscaling-tester/pkg/server/conn"
+	"github.com/9to6/aws-autoscaling-tester/pkg/log"
+	"github.com/9to6/aws-autoscaling-tester/pkg/server/conn"
 	"os"
 	"os/signal"
 	"syscall"

@@ -1,8 +1,8 @@
 package handler
 
 import (
-	"aws-autoscaling-tester/pkg/client/iface"
-	"aws-autoscaling-tester/pkg/client/worker"
+	"github.com/9to6/aws-autoscaling-tester/pkg/client/iface"
+	"github.com/9to6/aws-autoscaling-tester/pkg/client/worker"
 	"fmt"
 	"github.com/gin-gonic/gin"
 	llog "github.com/sirupsen/logrus"
