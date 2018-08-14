@@ -10,7 +10,7 @@ import (
 const (
 	namespace       = "TESTMetrics"
 	metricName      = "connection"
-	connectionValue = 1000
+	connectionValue = 100
 )
 
 var (
@@ -41,6 +41,12 @@ func SendConnectionMetric(cloudWatch *cloudwatch.CloudWatch) error {
 		return err
 	}
 	return nil
+}
+
+func InitConnectionCount(count float64) {
+	mutex.Lock()
+	currentConnection = count
+	mutex.Unlock()
 }
 
 func IncreaseConnectionCount(count float64) {

@@ -1,9 +1,9 @@
 package handler
 
 import (
+	"fmt"
 	"github.com/9to6/aws-autoscaling-tester/pkg/client/iface"
 	"github.com/9to6/aws-autoscaling-tester/pkg/client/worker"
-	"fmt"
 	"github.com/gin-gonic/gin"
 	llog "github.com/sirupsen/logrus"
 	"strconv"
@@ -60,7 +60,11 @@ func PostCreateWorker(c *gin.Context) {
 		url = url_
 	}
 
-	w := worker.NewWorker(period, conn, url)
 	cli := client_.(iface.Client)
+	conf := cli.Config()
+	conf.Period = period
+	conf.ConnectionValue = conn
+	conf.Url = url
+	w := worker.NewWorker(*conf, l)
 	cli.SetWorker(w)
 }

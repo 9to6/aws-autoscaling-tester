@@ -1,14 +1,15 @@
 package client
 
 import (
-	"github.com/9to6/gin-logrus"
-	"github.com/gin-contrib/location"
-	"github.com/gin-gonic/gin"
-	llog "github.com/sirupsen/logrus"
+	"fmt"
 	"github.com/9to6/aws-autoscaling-tester/pkg/client/config"
 	"github.com/9to6/aws-autoscaling-tester/pkg/client/handler"
 	"github.com/9to6/aws-autoscaling-tester/pkg/client/worker"
 	"github.com/9to6/aws-autoscaling-tester/pkg/log"
+	"github.com/9to6/gin-logrus"
+	"github.com/gin-contrib/location"
+	"github.com/gin-gonic/gin"
+	llog "github.com/sirupsen/logrus"
 )
 
 type Client struct {
@@ -22,10 +23,14 @@ func (s *Client) Logger() *llog.Entry {
 	return s.logger
 }
 
+func (s *Client) Config() *config.Config {
+	return s.config
+}
+
 func (s *Client) Run() error {
-	s.worker = worker.NewWorker(s.config.Period, s.config.ConnectionValue, s.config.Url)
+	s.worker = worker.NewWorker(*s.config, s.Logger())
 	s.worker.StartWork()
-	return s.router.Run(":8081")
+	return s.router.Run(fmt.Sprintf(":%d", s.config.Port))
 }
 
 func (s *Client) SetWorker(w *worker.Worker) {
