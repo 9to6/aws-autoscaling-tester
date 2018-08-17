@@ -1,11 +1,11 @@
 FROM golang:1.10.3-alpine
-LABEL maintainer=surieven
-LABEL email=ktk0011+dev@gmail.com
+LABEL maintainer=9to6
+LABEL email=ktk0011@gmail.com
 
 RUN apk add --update git make
 
-ADD . /go/src/metric-generator
-RUN cd /go/src/metric-generator && make install
+ADD . /go/src/github.com/9to6/aws-autoscaling-tester
+RUN cd /go/src/github.com/9to6/aws-autoscaling-tester && make install
 WORKDIR /go/bin
 
 # RUN apk add --update \
@@ -17,4 +17,4 @@ WORKDIR /go/bin
 #   && rm -rf /var/cache/apk/*
 
 EXPOSE 8080
-ENTRYPOINT ["metric-generator"]
+ENTRYPOINT ["aws-autoscaling-tester"]

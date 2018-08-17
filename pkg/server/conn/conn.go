@@ -10,7 +10,7 @@ import (
 const (
 	namespace       = "TESTMetrics"
 	metricName      = "connection"
-	connectionValue = 100
+	connectionValue = 10
 )
 
 var (
