@@ -50,7 +50,7 @@ clean:
 	@rm -rf release
 
 docker-build:
-	@docker build -t dreg.be/tkwon/${SRC}:`cat VERSION` .
+	@docker build -t 9to5/metric-generator/${SRC}:`cat VERSION` .
 
 docker-push:
-	@docker push dreg.be/tkwon/${SRC}:`cat VERSION`
+	@docker push 9to5/metric-generator/${SRC}:`cat VERSION`
